@@ -3,7 +3,7 @@ import { reactive, ref,onMounted} from "vue";
 import { useRouter } from "vue-router";
 import { usePostStore } from "@/stores/PostStore";
 import { ThumbsUp } from "lucide-vue-next";
-import {likepost,dbposts} from "../services/post_service"
+import {likepost,dbposts,dbfeedposts} from "../services/post_service"
 import { toast } from 'vue3-toastify';
 const postStore = usePostStore();
 const router = useRouter();
@@ -32,7 +32,7 @@ const likePost = async (id) =>{
 const alldbPosts = async () =>{
     try {
 
-        const response = await dbposts();
+        const response = await dbfeedposts();
         allposts.posts = response.data.data
 
     

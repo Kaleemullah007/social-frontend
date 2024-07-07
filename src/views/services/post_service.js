@@ -3,6 +3,10 @@ export function dbposts(){
     return  http().get('/posts');
 }
 
+export function dbfeedposts(){
+    return  http().get('/posts/dbfeedposts');
+}
+
 export function editpost(id){
    
     return  http().get('/posts/'+id);
